@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="shortcut icon" href="assets/pngegg (3).png" type="image/x-icon">
+    <link rel="stylesheet" href="style-index.css">
+</head>
+<body>
+    <nav>
+        <a href="login.html">LOGIN</a>
+        <a href="index.html">CATÁLOGO</a>
+        <a href="adicionar.html">ADICIONAR</a>
+    </nav>
+    <div id="titulo">
+        <h2>MEU CARRINHO</h2>
+    </div>
+    <div id="carrinho">
+    </div>
+
+    
+
+    <div id="pag">
+        <footer>
+            <h2>Dados para pagamaneto</h2>
+            <label for="nome">Nome</label>
+            <input type="text" name="nome" id="nome" placeholder="Digite seu nome completo:">
+    
+            <label for="email">Email</label>
+            <input type="email" name="email" id="email" placeholder="Digite seu Email:">
+
+            <label for="cpf">CPF</label>
+            <input type="number" name="cpf" id="cpf" placeholder="Digite seu CPF:">
+            <button id="pagar">CONFIRMAR</button>
+
+            <div id="aaa">
+                <h3>TOTAL: </h3>
+                <h4 id="total"> </h4>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        const but = document.getElementById('pagar')
+        but.addEventListener('click', sim)
+
+        function sim() {
+            let resp = confirm('Deseja confirmar a compra?')
+            if (resp) {
+                alert('Obrigado pela compra!')
+                window.location.href = "index.html"
+            }
+        }
+
+        window.onload = function() {
+            const carrinhoDiv = document.getElementById('carrinho');
+            let carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
+            const total = document.getElementById('total');
+            
+            function removerItem(index) {
+                carrinho.splice(index, 1);
+                localStorage.setItem('carrinho', JSON.stringify(carrinho));
+                renderCarrinho();
+            }
+
+            function renderCarrinho() {
+                carrinhoDiv.innerHTML = '';
+                let totalP = 0;
+
+                carrinho.forEach((produto, index) => {
+                    const produtoDiv = document.createElement('div');
+                    produtoDiv.classList.add('produto');
+
+                    const imagemP = document.createElement('img');
+                    imagemP.className = 'foto';
+                    imagemP.src = produto.imagem;
+                    produtoDiv.appendChild(imagemP);
+
+                    const nomeP = document.createElement('h2');
+                    nomeP.textContent = produto.nome.toUpperCase();
+                    produtoDiv.appendChild(nomeP);
+
+                    const descricaoP = document.createElement('p');
+                    descricaoP.textContent = produto.descricao;
+                    produtoDiv.appendChild(descricaoP);
+
+                    const precoP = document.createElement('h3')
+                    precoP.textContent = `R$: ${produto.preco.toFixed(2)}`  
+                    produtoDiv.appendChild(precoP)
+
+                    totalP += produto.preco
+
+                    carrinhoDiv.appendChild(produtoDiv);
+
+                    produtoDiv.addEventListener('click', () => removerItem(index));
+                });
+
+                total.textContent = `R$ ${totalP.toFixed(2)}`
+            }
+
+            renderCarrinho();
+        };
+    </script>
+</body>
+</html>

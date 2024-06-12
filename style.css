@@ -1,0 +1,92 @@
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bold;
+    background: linear-gradient(to right, #3535e9cc, #eb3c3cbb);
+    height: 100vh;
+}
+
+
+
+#contents {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#dados {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    width: 500px;
+    height: 350px;
+    background-color: rgb(167, 172, 241);
+    padding: 4px;
+    border-radius: 20px;
+    margin-top: 100px;
+    box-shadow: 10px 10px 10px 5px rgba(0, 0, 0, 0.5);
+}
+
+input {
+    background-color: white;
+    border: 0.5px solid rgba(0, 0, 0, 0.616);
+    width: 250px;
+    border-radius: 20px;
+    margin-bottom: 20px;
+    margin-top: 5px;
+    height: 30px;
+    display: flex;
+    text-align: center;
+}
+
+button {
+    background-color: rgb(67, 218, 67);
+    border: 0.5px solid black;
+    border-radius: 20px;
+    width: 250px;
+    height: 30px;
+    margin-top: 20px;
+}
+
+h1 {
+    margin-bottom: 80px;
+}
+
+footer {
+    width: 100%;
+    height: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: end;
+}
+
+.social {
+    display: flex;
+    gap: 30px;
+    font-size: 20px;
+}
+
+#eu {
+    display: flex;
+    justify-content: center;
+}
+
+button:hover {
+    scale: 1.07;
+    transition: 0.4s;
+}
+
+.ima {
+    margin-top: 10px;
+    width: 140px;
+    height: 120px;
+}
+
+i:hover {
+    scale: 1.2;
+}

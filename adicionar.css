@@ -1,0 +1,88 @@
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    font-weight: bold;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+nav {
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    height: 80px;
+    align-items: center;
+    font-weight: bold;
+    font-size: 20px;
+    background: linear-gradient(to right, #2727e7, #578cf0);
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+.produto {
+    border-radius: 10px;
+    width: 250px;
+    height: 300px;
+    text-align: center;
+    padding: 10px;
+}
+
+a:hover {
+    scale: 1.07;
+    transition: 0.4s;
+    color: black;
+}
+
+#conteudo {
+    display: flex;
+    width: 100%;
+    height: 600px;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+
+
+#formProduto {
+    margin-top: 30px;
+    width: 25%;
+    display: grid;
+    row-gap: 20px;
+    border: none;
+    border-radius: 20px;
+    padding: 20px;
+    height: 500px;
+    background-color: rgb(145, 151, 238);
+    box-shadow: 10px 10px 10px 5px rgba(0, 0, 0, 0.5);
+    background: linear-gradient(to right, #2727e7, #82a9f1);
+}
+
+input {
+    text-align: center;
+    border: solid 1px rgba(0, 0, 0, 0.5);
+    border-radius: 20px;
+    height: 30px;
+}
+
+button {
+    background-color: white;
+    border-radius: 20px;
+    height: 40px;
+    background-color: rgb(67, 218, 67);
+}
+
+button:hover {
+    transition: 0.3s;
+    scale: 1.03;
+}
+
+#logo {
+    width: 20px;
+    height: 20px;
+}
+
